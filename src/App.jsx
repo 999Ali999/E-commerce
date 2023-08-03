@@ -1,7 +1,12 @@
+import { Box, Button } from "@mui/material";
 import React from "react";
 
 const App = () => {
-  return <div>App</div>;
+  return (
+    <Box>
+      <Button variant="contained">Ali</Button>
+    </Box>
+  );
 };
 
 export default App;
