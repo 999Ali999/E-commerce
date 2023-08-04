@@ -5,7 +5,7 @@ import MainCarousel from "./MainCarousel";
 const Main = () => {
   return (
     <Container maxWidth="xl">
-      <Box sx={{ marginTop: "90px" }}>
+      <Box sx={{ marginTop: "90px", width: "100%" }}>
         <MainCarousel />
       </Box>
     </Container>

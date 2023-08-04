@@ -3,8 +3,6 @@ import {
   Badge,
   Box,
   Container,
-  Menu,
-  MenuItem,
   Toolbar,
   Typography,
 } from "@mui/material";
@@ -51,7 +49,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     width: "100%",
     [theme.breakpoints.up("sm")]: {
       width: "40ch",
-      "&:focus": {
+      "&:hover": {
         width: "41ch",
       },
     },
