@@ -72,7 +72,7 @@ const Header = () => {
           >
             <Box sx={{ display: "flex" }}>
               <Typography variant="h6" textTransform="none">
-                Happy Shop
+                Happy Commerce
               </Typography>
             </Box>
             <Box sx={{ display: "flex" }}>
