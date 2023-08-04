@@ -4,11 +4,9 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Box, CardActionArea, Rating } from "@mui/material";
-import { Link } from "react-router-dom";
 
 export default function MainCard({ image, title, price, reviews, stars }) {
   return (
-    // <Link to={`products`}>
     <Card
       variant="outlined"
       sx={{
@@ -70,6 +68,5 @@ export default function MainCard({ image, title, price, reviews, stars }) {
         </CardContent>
       </CardActionArea>
     </Card>
-    // </Link>
   );
 }
