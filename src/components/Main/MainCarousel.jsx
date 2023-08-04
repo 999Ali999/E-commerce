@@ -7,11 +7,19 @@ const MainCarousel = (props) => {
   var items = [
     {
       image:
-        "https://dkstatics-public.digikala.com/digikala-adservice-banners/d25878b80b2dc832f4847cb949d121fa4da9677f_1690712455.jpg?x-oss-process=image/quality,q_95/format,webp",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAADICAMAAAA9W+hXAAAAA1BMVEX/xqxbIpY8AAAANElEQVR4nO3BMQEAAADCoPVP7WsIoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeAN1+AABVhDU2QAAAABJRU5ErkJggg==",
     },
     {
       image:
-        "https://dkstatics-public.digikala.com/digikala-adservice-banners/edb74efddd45d46cecafeb7a6736bb5e6eaa474b_1691080025.gif?x-oss-process=image?x-oss-process=image/format,webp",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAADICAMAAAA9W+hXAAAAA1BMVEV+qpKz/N6LAAAANElEQVR4nO3BMQEAAADCoPVP7WsIoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeAN1+AABVhDU2QAAAABJRU5ErkJggg==",
+    },
+    {
+      image:
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVQAAACUCAMAAAD70yGHAAAAA1BMVEWSfqreUk/KAAAASElEQVR4nO3BMQEAAADCoPVPbQ0PoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIBnA8UkAAEmGMCJAAAAAElFTkSuQmCC",
+    },
+    {
+      image:
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAADICAMAAAA9W+hXAAAAA1BMVEVGGVla2ozgAAAANElEQVR4nO3BMQEAAADCoPVP7WsIoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeAN1+AABVhDU2QAAAABJRU5ErkJggg==",
     },
   ];
 
