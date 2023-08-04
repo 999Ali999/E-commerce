@@ -9,7 +9,7 @@ import Main from "./components/Main/Main";
 
 const theme = createTheme({
   palette: {
-    mode: "light",
+    mode: "dark",
   },
 });
 

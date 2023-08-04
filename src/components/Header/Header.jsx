@@ -13,6 +13,7 @@ import InputBase from "@mui/material/InputBase";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
 import AccountCircleRoundedIcon from "@mui/icons-material/AccountCircleRounded";
+import SettingsIcon from "@mui/icons-material/Settings";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -49,8 +50,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     width: "100%",
     [theme.breakpoints.up("sm")]: {
       width: "40ch",
-      "&:hover": {
-        width: "41ch",
+      "&:focus": {
+        width: "42ch",
       },
     },
   },
@@ -94,6 +95,9 @@ const Header = () => {
 
               <IconButton size="large">
                 <AccountCircleRoundedIcon sx={{ color: "white" }} />
+              </IconButton>
+              <IconButton size="large">
+                <SettingsIcon sx={{ color: "white" }} />
               </IconButton>
             </Box>
           </Container>

@@ -1,15 +1,16 @@
 import React from "react";
-import { Box, Container, Grid } from "@mui/material";
+import { Box, Container, Grid, Typography } from "@mui/material";
 
 const MainCategories = () => {
   return (
-    <Container maxWidth="lg" sx={{ paddingTop: "30px" }}>
-      {/* <Typography
-        variant="h6"
-        sx={{ display: "flex", justifyContent: "center" }}
-      >
-        Categories
-      </Typography> */}
+    <Container
+      maxWidth="lg"
+      sx={{
+        marginTop: "26px",
+        borderRadius: "5px",
+        padding: "20px",
+      }}
+    >
       <Grid container sx={{ marginTop: "20px" }}>
         {categories.map((category) => (
           <Grid
@@ -30,8 +31,15 @@ const MainCategories = () => {
                   cursor: "pointer",
                   objectFit: "cover",
                 }}
-                src={category}
+                src={category.image}
+                loading="lazy"
               />
+              <Typography
+                variant="subtitle2"
+                sx={{ display: "flex", justifyContent: "center" }}
+              >
+                {category.title}
+              </Typography>
             </Box>
           </Grid>
         ))}
@@ -43,8 +51,24 @@ const MainCategories = () => {
 export default MainCategories;
 
 const categories = [
-  "../../../images/silver-smartphone-front-side-white-background_187299-20187.jpg",
-  "../../../images/beauty-model-girl-face-portrait-beautiful-woman-touching-face-enjoy-perfect-skin_394555-801.jpg",
-  "../../../images/excited-white-girl-bright-stylish-glasses-posing-pink-dreamy-curly-woman-playing-with-her-ginger-hair-laughing.jpg",
-  "../../../images/front-view-armchair-plant-3d-rendering_252032-366-removebg-preview.png",
+  {
+    title: "Electronic Devices",
+    image:
+      "../../../images/silver-smartphone-front-side-white-background_187299-20187.jpg",
+  },
+  {
+    title: "Health and Beauty",
+    image:
+      "../../../images/beauty-model-girl-face-portrait-beautiful-woman-touching-face-enjoy-perfect-skin_394555-801.jpg",
+  },
+  {
+    title: "Fashion and Style",
+    image:
+      "../../../images/excited-white-girl-bright-stylish-glasses-posing-pink-dreamy-curly-woman-playing-with-her-ginger-hair-laughing.jpg",
+  },
+  {
+    title: "Home Furniture",
+    image:
+      "../../../images/front-view-armchair-plant-3d-rendering_252032-366-removebg-preview.png",
+  },
 ];
