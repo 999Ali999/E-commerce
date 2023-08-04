@@ -3,6 +3,7 @@ import React from "react";
 import MainCarousel from "./MainCarousel";
 import MainCategories from "./MainCategories";
 import MainProducts from "./MainProducts";
+import Footer from "./Footer";
 
 const Main = () => {
   return (

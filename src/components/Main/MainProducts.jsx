@@ -16,9 +16,6 @@ const MainProducts = () => {
   return (
     <Container maxWidth="xl" sx={{ paddingTop: "40px", paddingBottom: "40px" }}>
       <Grid container spacing={2}>
-        {/* <Grid item xs={6} sm={4} md={2}>
-          <MainCard />
-        </Grid> */}
         {products ? (
           products.map((product) => (
             <Grid key={product.id} item xs={6} sm={4} md={2}>
@@ -27,6 +24,8 @@ const MainProducts = () => {
                 title={product.title}
                 price={product.price}
                 key={product.id}
+                reviews={product.rating.count}
+                stars={product.rating.rate}
               />
             </Grid>
           ))

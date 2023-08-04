@@ -6,6 +6,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 
 import Header from "./components/Header/Header";
 import Main from "./components/Main/Main";
+import Footer from "./components/Main/Footer";
 
 const theme = createTheme({
   palette: {
@@ -21,6 +22,9 @@ const App = () => {
         <Box sx={{ display: "flex" }}>
           <Header />
           <Main />
+        </Box>
+        <Box paddingTop="20px">
+          <Footer />
         </Box>
       </ThemeProvider>
     </Box>
