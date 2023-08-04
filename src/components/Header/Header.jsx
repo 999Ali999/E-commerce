@@ -50,9 +50,9 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     transition: theme.transitions.create("width"),
     width: "100%",
     [theme.breakpoints.up("sm")]: {
-      width: "30ch",
+      width: "40ch",
       "&:focus": {
-        width: "32ch",
+        width: "41ch",
       },
     },
   },
@@ -61,7 +61,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 const Header = () => {
   return (
     <Box sx={{ display: "flex" }}>
-      <AppBar>
+      <AppBar position="fixed">
         <Toolbar>
           <Container
             maxWidth="xl"

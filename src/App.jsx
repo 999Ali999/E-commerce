@@ -5,6 +5,7 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 
 import Header from "./components/Header/Header";
+import Main from "./components/Main/Main";
 
 const theme = createTheme({
   palette: {
@@ -14,12 +15,15 @@ const theme = createTheme({
 
 const App = () => {
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Box>
-        <Header />
-      </Box>
-    </ThemeProvider>
+    <Box>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Box sx={{ display: "flex" }}>
+          <Header />
+          <Main />
+        </Box>
+      </ThemeProvider>
+    </Box>
   );
 };
 
