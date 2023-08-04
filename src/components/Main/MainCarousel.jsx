@@ -3,7 +3,7 @@ import Carousel from "react-material-ui-carousel";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
-const MainCarousel = (props) => {
+const MainCarousel = () => {
   var items = [
     {
       image:
