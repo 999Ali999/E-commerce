@@ -36,7 +36,15 @@ const MainCategories = () => {
               />
               <Typography
                 variant="subtitle2"
-                sx={{ display: "flex", justifyContent: "center" }}
+                sx={{
+                  display: "flex",
+                  cursor: "pointer",
+                  justifyContent: "center",
+                  "&:hover": {
+                    transform: "scale(1.05)",
+                    textDecorationLine: "underline",
+                  },
+                }}
               >
                 {category.title}
               </Typography>

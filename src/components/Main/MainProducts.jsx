@@ -1,7 +1,6 @@
-import { Box, Container, Grid } from "@mui/material";
+import { Box, Container, Grid, LinearProgress } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import MainCard from "./MainCard";
-import CircularProgress from "@mui/material/CircularProgress";
 
 const MainProducts = () => {
   const [products, setProducts] = useState(null);
@@ -30,8 +29,8 @@ const MainProducts = () => {
             </Grid>
           ))
         ) : (
-          <Box sx={{ display: "flex" }}>
-            <CircularProgress />
+          <Box sx={{ width: "100%" }}>
+            <LinearProgress color="inherit" />
           </Box>
         )}
       </Grid>

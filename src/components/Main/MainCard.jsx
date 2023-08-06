@@ -22,6 +22,7 @@ export default function MainCard({ image, title, price, reviews, stars }) {
         <CardMedia
           component="img"
           image={image}
+          loading="lazy"
           sx={{
             objectFit: "contain",
             minHeight: 200,
@@ -41,6 +42,9 @@ export default function MainCard({ image, title, price, reviews, stars }) {
                 whiteSpace: "nowrap",
                 overflow: "hidden",
                 textOverflow: "ellipsis",
+                "&:hover": {
+                  textDecorationLine: "underline",
+                },
               }}
               variant="button"
               component="div"
@@ -50,15 +54,29 @@ export default function MainCard({ image, title, price, reviews, stars }) {
           </Box>
           <Box sx={{ paddingTop: "10px" }}>
             <Box>
-              <Rating name="read-only" value={stars} readOnly />
+              <Rating
+                name="read-only"
+                sx={{ display: "flex", justifyContent: "center" }}
+                value={stars}
+                readOnly
+              />
             </Box>
             <Box>
-              <Typography variant="caption">{reviews} Reviews</Typography>
+              <Typography
+                sx={{ display: "flex", justifyContent: "center" }}
+                variant="caption"
+              >
+                {reviews} Reviews
+              </Typography>
             </Box>
           </Box>
           <Box>
             <Typography
-              sx={{ paddingTop: "10px" }}
+              sx={{
+                paddingTop: "10px",
+                display: "flex",
+                justifyContent: "center",
+              }}
               variant="body2"
               color="text.secondary"
             >
