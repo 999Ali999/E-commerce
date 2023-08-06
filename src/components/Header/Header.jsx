@@ -14,6 +14,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
 import AccountCircleRoundedIcon from "@mui/icons-material/AccountCircleRounded";
 import SettingsIcon from "@mui/icons-material/Settings";
+import { Link } from "react-router-dom";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -71,9 +72,11 @@ const Header = () => {
             }}
           >
             <Box sx={{ display: "flex" }}>
-              <Typography variant="h6" textTransform="none">
-                Happy Commerce
-              </Typography>
+              <Link to="/" style={{ textDecoration: "none", color: "white" }}>
+                <Typography variant="h6" textTransform="none">
+                  Happy Commerce
+                </Typography>
+              </Link>
             </Box>
             <Box sx={{ display: "flex" }}>
               <Search>
