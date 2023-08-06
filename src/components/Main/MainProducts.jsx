@@ -19,7 +19,11 @@ const MainProducts = () => {
         {products ? (
           products.map((product) => (
             <Grid key={product.title} item xs={6} sm={4} md={2}>
-              <Link key={product.title} to={`/products/${product.id}`}>
+              <Link
+                style={{ textDecoration: "none" }}
+                key={product.title}
+                to={`/products/${product.id}`}
+              >
                 <MainCard
                   image={product.image}
                   title={product.title}
