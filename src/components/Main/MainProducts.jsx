@@ -1,6 +1,7 @@
 import { Box, Container, Grid, LinearProgress } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import MainCard from "./MainCard";
+import { Link } from "react-router-dom";
 
 const MainProducts = () => {
   const [products, setProducts] = useState(null);
@@ -18,14 +19,16 @@ const MainProducts = () => {
         {products ? (
           products.map((product) => (
             <Grid key={product.id} item xs={6} sm={4} md={2}>
-              <MainCard
-                image={product.image}
-                title={product.title}
-                price={product.price}
-                key={product.id}
-                reviews={product.rating.count}
-                stars={product.rating.rate}
-              />
+              <Link to={`/products/${product.id}`}>
+                <MainCard
+                  image={product.image}
+                  title={product.title}
+                  price={product.price}
+                  key={product.id}
+                  reviews={product.rating.count}
+                  stars={product.rating.rate}
+                />
+              </Link>
             </Grid>
           ))
         ) : (

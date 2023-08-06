@@ -31,7 +31,7 @@ export default function MainCard({ image, title, price, reviews, stars }) {
             padding: 2,
             transition: "transform 0.1s",
             "&:hover": {
-              transform: "scale(1.05)", // or any other effect you want
+              transform: "scale(1.05)",
             },
           }}
         />
