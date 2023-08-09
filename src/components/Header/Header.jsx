@@ -6,7 +6,7 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { styled, alpha } from "@mui/material/styles";
 import IconButton from "@mui/material/IconButton";
 import InputBase from "@mui/material/InputBase";
@@ -59,6 +59,14 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 const Header = ({ onClick }) => {
+  const [badge, setBadge] = useState(0);
+
+  useEffect(() => {
+    var arrayFromStorage = JSON.parse(localStorage.getItem("cart"));
+    var arrayLength = arrayFromStorage ? arrayFromStorage.length : 0;
+    setBadge(arrayLength);
+  }, [badge]);
+
   return (
     <Box sx={{ display: "flex" }}>
       <AppBar position="fixed">
@@ -91,7 +99,7 @@ const Header = ({ onClick }) => {
             </Box>
             <Box sx={{ display: "flex" }} gap={0.5}>
               <IconButton size="large" onClick={onClick}>
-                <Badge badgeContent={3} color="secondary">
+                <Badge badgeContent={badge} color="secondary">
                   <ShoppingCartRoundedIcon sx={{ color: "white" }} />
                 </Badge>
               </IconButton>

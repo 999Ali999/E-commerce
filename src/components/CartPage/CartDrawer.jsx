@@ -3,7 +3,6 @@ import {
   Button,
   Container,
   Divider,
-  Drawer,
   FormControl,
   Grid,
   IconButton,
@@ -14,10 +13,16 @@ import {
   Typography,
 } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
-import React from "react";
+import React, { useEffect } from "react";
 
 const CartDrawer = ({ open, onClose }) => {
+  const [cartItems, setCartItems] = React.useState(null);
   const [amount, setAmount] = React.useState(1);
+
+  useEffect(() => {
+    const storedItems = JSON.parse(localStorage.getItem("cart"));
+    setCartItems(storedItems);
+  }, [cartItems]);
 
   const handleChange = (event) => {
     setAmount(event.target.value);
@@ -134,7 +139,11 @@ const CartDrawer = ({ open, onClose }) => {
                     </Box>
                     <Divider sx={{ marginY: "8px" }} />
                     <Box>
-                      <Button variant="contained" fullWidth>
+                      <Button
+                        onClick={() => console.log(cartItems)}
+                        variant="contained"
+                        fullWidth
+                      >
                         <Typography textTransform="none">
                           Proceed to Checkout
                         </Typography>
