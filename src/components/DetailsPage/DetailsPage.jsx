@@ -6,7 +6,6 @@ import {
   Divider,
   FormControl,
   Grid,
-  InputLabel,
   MenuItem,
   Paper,
   Rating,
@@ -14,7 +13,7 @@ import {
   Typography,
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Header from "../Header/Header";
 import CartDrawer from "../CartPage/CartDrawer";
 
@@ -24,6 +23,8 @@ const DetailsPage = () => {
   const [products, setProducts] = useState(null);
 
   const [amount, setAmount] = React.useState(1);
+
+  const navigate = useNavigate();
 
   const handleChange = (event) => {
     setAmount(event.target.value);
@@ -40,6 +41,13 @@ const DetailsPage = () => {
       .then((res) => res.json())
       .then((json) => setProducts(json));
   }, []);
+
+  const setToLocalStorage = () => {
+    const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
+    const updatedCart = [...existingCart, products];
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
+    navigate("/");
+  };
 
   return (
     <Container maxWidth="xl">
@@ -175,9 +183,9 @@ const DetailsPage = () => {
                     }}
                   >
                     <Button
+                      onClick={setToLocalStorage}
                       variant="contained"
                       fullWidth
-                      onClick={() => addToCart(product)}
                     >
                       <Typography textTransform="none">Add to Cart</Typography>
                     </Button>
