@@ -18,16 +18,6 @@ export default function Footer() {
       }}
     >
       <Container maxWidth="lg">
-        {/* <Box m={3}>
-          <Typography variant="body2" color="text.secondary" align="center">
-            {"Copyright © "}
-            <Link color="inherit" href="/">
-              HappyCommerce
-            </Link>{" "}
-            {new Date().getFullYear()}
-            {"."}
-          </Typography>
-        </Box> */}
         <Grid
           container
           spacing={8}
