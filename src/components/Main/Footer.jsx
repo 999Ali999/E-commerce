@@ -22,7 +22,6 @@ export default function Footer() {
           container
           spacing={8}
           sx={{
-            display: "flex",
             justifyContent: "center",
             display: "flex",
             alignItems: "baseline",
