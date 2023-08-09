@@ -16,14 +16,21 @@ import {
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Header from "../Header/Header";
+import CartDrawer from "../CartPage/CartDrawer";
 
 const DetailsPage = () => {
+  const [drawer, setDrawer] = React.useState(false);
+
   const [products, setProducts] = useState(null);
 
   const [amount, setAmount] = React.useState(1);
 
   const handleChange = (event) => {
     setAmount(event.target.value);
+  };
+
+  const toggleDrawer = () => {
+    setDrawer(!drawer);
   };
 
   const { id } = useParams();
@@ -37,7 +44,12 @@ const DetailsPage = () => {
   return (
     <Container maxWidth="xl">
       <Box sx={{ display: "flex", marginTop: "90px", padding: "24px" }}>
-        <Header />
+        <Header onClick={toggleDrawer} />
+
+        <Box>
+          <CartDrawer open={drawer} onClose={() => setDrawer(false)} />
+        </Box>
+
         {products ? (
           <Grid container>
             <Grid container item xs={9}>
@@ -162,8 +174,12 @@ const DetailsPage = () => {
                       paddingTop: "10px",
                     }}
                   >
-                    <Button variant="contained" fullWidth>
-                      Add to Cart
+                    <Button
+                      variant="contained"
+                      fullWidth
+                      onClick={() => addToCart(product)}
+                    >
+                      <Typography textTransform="none">Add to Cart</Typography>
                     </Button>
                   </Box>
                 </Paper>

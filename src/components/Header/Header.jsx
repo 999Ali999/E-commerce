@@ -58,7 +58,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-const Header = () => {
+const Header = ({ onClick }) => {
   return (
     <Box sx={{ display: "flex" }}>
       <AppBar position="fixed">
@@ -90,7 +90,7 @@ const Header = () => {
               </Search>
             </Box>
             <Box sx={{ display: "flex" }} gap={0.5}>
-              <IconButton size="large">
+              <IconButton size="large" onClick={onClick}>
                 <Badge badgeContent={3} color="secondary">
                   <ShoppingCartRoundedIcon sx={{ color: "white" }} />
                 </Badge>
