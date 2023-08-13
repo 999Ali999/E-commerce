@@ -16,13 +16,14 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import React, { useEffect } from "react";
 
 const CartDrawer = ({ open, onClose }) => {
-  const [cartItems, setCartItems] = React.useState(null);
+  const [cartItems, setCartItems] = React.useState([]);
   const [amount, setAmount] = React.useState(1);
 
   useEffect(() => {
-    const storedItems = JSON.parse(localStorage.getItem("cart"));
+    const storedData = localStorage.getItem("cart");
+    const storedItems = storedData ? JSON.parse(storedData) : [];
     setCartItems(storedItems);
-  }, [cartItems]);
+  }, []);
 
   const handleChange = (event) => {
     setAmount(event.target.value);
@@ -38,78 +39,92 @@ const CartDrawer = ({ open, onClose }) => {
                 <Box sx={{ paddingY: "16px" }}>
                   <Typography variant="h4">Shopping Cart</Typography>
                 </Box>
-                <Box>
-                  <Grid container spacing={1} paddingX="16px">
-                    <Grid item xs={2}>
-                      <Box
-                        sx={{
-                          display: "flex",
-                          justifyContent: "center",
-                        }}
-                      >
-                        <img
-                          src="https://www.buildproshop.com/images/mouse_E2IrCGI.jpg"
-                          style={{
-                            width: "90px",
-                            height: "90px",
-                            objectFit: "contain",
-                          }}
-                        />
-                      </Box>
-                    </Grid>
-                    <Grid item xs={2} sx={{ margin: "7px" }}>
-                      <Box sx={{ display: "flex", justifyContent: "center" }}>
-                        <Typography
-                          variant="body2"
-                          sx={{ display: "flex", justifyContent: "center" }}
-                        >
-                          Logitech G-Series Gaming Mouse
-                        </Typography>
-                      </Box>
-                    </Grid>
-                    <Grid item xs={2} sx={{ margin: "7px" }}>
-                      <Box>
-                        <Typography
-                          variant="body2"
-                          sx={{ display: "flex", justifyContent: "center" }}
-                        >
-                          $49.99
-                        </Typography>
-                      </Box>
-                    </Grid>
-                    <Grid item xs={2} sx={{ margin: "7px" }}>
-                      <Box sx={{ display: "flex", justifyContent: "center" }}>
-                        <FormControl
-                          variant="outlined"
-                          sx={{ paddingBottom: "2px" }}
-                        >
-                          <Select
-                            labelId="demo-simple-select-label"
-                            id="demo-simple-select"
-                            placeholder="Amount"
-                            value={amount}
-                            onChange={handleChange}
-                            size="small"
-                            sx={{ width: "80px" }}
+                {/* Im back mafucka */}
+                {cartItems ? (
+                  cartItems.map((item) => (
+                    <Box>
+                      <Grid container spacing={1} paddingX="16px">
+                        <Grid item xs={2}>
+                          <Box
+                            sx={{
+                              display: "flex",
+                              justifyContent: "center",
+                            }}
                           >
-                            <MenuItem value={1}>1</MenuItem>
-                            <MenuItem value={2}>2</MenuItem>
-                            <MenuItem value={3}>3</MenuItem>
-                            <MenuItem value={4}>4</MenuItem>
-                            <MenuItem value={5}>5</MenuItem>
-                          </Select>
-                        </FormControl>
-                      </Box>
-                    </Grid>
-                    <Grid item xs={2} sx={{ margin: "7px" }}>
-                      <Box sx={{ display: "flex", justifyContent: "center" }}>
-                        <IconButton>
-                          <DeleteIcon />
-                        </IconButton>
-                      </Box>
-                    </Grid>
-                  </Grid>
-                </Box>
+                            <img
+                              src={item.image}
+                              style={{
+                                width: "90px",
+                                height: "90px",
+                                objectFit: "contain",
+                              }}
+                            />
+                          </Box>
+                        </Grid>
+                        <Grid item xs={2} sx={{ margin: "7px" }}>
+                          <Box
+                            sx={{ display: "flex", justifyContent: "center" }}
+                          >
+                            <Typography
+                              variant="body2"
+                              sx={{ display: "flex", justifyContent: "center" }}
+                            >
+                              {item.title}
+                            </Typography>
+                          </Box>
+                        </Grid>
+                        <Grid item xs={2} sx={{ margin: "7px" }}>
+                          <Box>
+                            <Typography
+                              variant="body2"
+                              sx={{ display: "flex", justifyContent: "center" }}
+                            >
+                              ${item.price}
+                            </Typography>
+                          </Box>
+                        </Grid>
+                        <Grid item xs={2} sx={{ margin: "7px" }}>
+                          <Box
+                            sx={{ display: "flex", justifyContent: "center" }}
+                          >
+                            <FormControl
+                              variant="outlined"
+                              sx={{ paddingBottom: "2px" }}
+                            >
+                              <Select
+                                labelId="demo-simple-select-label"
+                                id="demo-simple-select"
+                                placeholder="Amount"
+                                value={amount}
+                                onChange={handleChange}
+                                size="small"
+                                sx={{ width: "80px" }}
+                              >
+                                <MenuItem value={1}>1</MenuItem>
+                                <MenuItem value={2}>2</MenuItem>
+                                <MenuItem value={3}>3</MenuItem>
+                                <MenuItem value={4}>4</MenuItem>
+                                <MenuItem value={5}>5</MenuItem>
+                              </Select>
+                            </FormControl>
+                          </Box>
+                        </Grid>
+                        <Grid item xs={2} sx={{ margin: "7px" }}>
+                          <Box
+                            sx={{ display: "flex", justifyContent: "center" }}
+                          >
+                            <IconButton>
+                              <DeleteIcon />
+                            </IconButton>
+                          </Box>
+                        </Grid>
+                      </Grid>
+                      <Divider sx={{ marginY: "20px" }} />
+                    </Box>
+                  ))
+                ) : (
+                  <></>
+                )}
               </Grid>
               <Grid item xs={4} sx={{ padding: "16px" }}>
                 <Box>
