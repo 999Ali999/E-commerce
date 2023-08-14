@@ -15,7 +15,6 @@ import {
 import DeleteIcon from "@mui/icons-material/Delete";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
 
 const CartDrawer = ({ open, onClose }) => {
   const [cartItems, setCartItems] = React.useState([]);
@@ -35,108 +34,137 @@ const CartDrawer = ({ open, onClose }) => {
     <Box>
       <SwipeableDrawer anchor="top" open={open} onClose={onClose}>
         <Box sx={{ padding: "25px" }}>
+          {/* here */}
+
           <Container maxWidth="lg">
+            <Box sx={{ display: "flex" }}>
+              <Button
+                sx={{ marginRight: "10px", marginY: "7px" }}
+                onClick={onClose}
+                variant="outlined"
+              >
+                <ArrowBackIcon />
+              </Button>
+              <Typography sx={{ paddingY: "10px" }} variant="h4">
+                Shopping Cart
+              </Typography>
+            </Box>
             <Grid container alignItems={"flex-start"}>
-              <Grid item xs={8}>
-                <Box sx={{ paddingY: "16px" }}>
-                  <Link to="/">
-                    <Button variant="outlined">
-                      <ArrowBackIcon />
-                    </Button>
-                  </Link>
+              <Grid key={""} item xs={8}>
+                {/* <Box sx={{ paddingY: "16px" }}>
+                  <Button onClick={onClose} variant="outlined">
+                    <ArrowBackIcon />
+                  </Button>
                   <Typography sx={{ paddingY: "10px" }} variant="h4">
                     Shopping Cart
                   </Typography>
-                </Box>
+                </Box> */}
                 {/* Im back mafucka */}
                 {cartItems ? (
                   cartItems.map((item) => (
-                    <Box key={item.id}>
-                      <Grid container spacing={1} paddingX="16px">
-                        <Grid item xs={2}>
-                          <Box
-                            sx={{
-                              display: "flex",
-                              justifyContent: "center",
-                            }}
-                          >
-                            <img
-                              src={item.image}
-                              style={{
-                                width: "90px",
-                                height: "90px",
-                                objectFit: "contain",
+                    <Paper variant="outlined" sx={{ marginY: "10px" }}>
+                      <Box key={item.id}>
+                        <Grid container spacing={1} marginY="10px">
+                          <Grid item xs={2}>
+                            <Box
+                              sx={{
+                                display: "flex",
+                                justifyContent: "center",
                               }}
-                            />
-                          </Box>
-                        </Grid>
-                        <Grid item xs={2} sx={{ margin: "7px" }}>
-                          <Box
-                            sx={{ display: "flex", justifyContent: "center" }}
-                          >
-                            <Typography
-                              variant="body2"
+                            >
+                              <img
+                                src={item.image}
+                                style={{
+                                  width: "90px",
+                                  height: "90px",
+                                  objectFit: "contain",
+                                  padding: 10,
+                                }}
+                              />
+                            </Box>
+                          </Grid>
+                          <Grid item xs={2} sx={{ margin: "7px" }}>
+                            <Box
                               sx={{ display: "flex", justifyContent: "center" }}
                             >
-                              {item.title}
-                            </Typography>
-                          </Box>
-                        </Grid>
-                        <Grid item xs={2} sx={{ margin: "7px" }}>
-                          <Box>
-                            <Typography
-                              variant="body2"
-                              sx={{ display: "flex", justifyContent: "center" }}
-                            >
-                              ${item.price}
-                            </Typography>
-                          </Box>
-                        </Grid>
-                        <Grid item xs={2} sx={{ margin: "7px" }}>
-                          <Box
-                            sx={{ display: "flex", justifyContent: "center" }}
-                          >
-                            <FormControl
-                              variant="outlined"
-                              sx={{ paddingBottom: "2px" }}
-                            >
-                              <Select
-                                labelId="demo-simple-select-label"
-                                id="demo-simple-select"
-                                placeholder="Amount"
-                                value={amount}
-                                onChange={handleChange}
-                                size="small"
-                                sx={{ width: "80px" }}
+                              <Typography
+                                variant="body2"
+                                sx={{
+                                  display: "flex",
+                                  justifyContent: "center",
+                                }}
                               >
-                                <MenuItem value={1}>1</MenuItem>
-                                <MenuItem value={2}>2</MenuItem>
-                                <MenuItem value={3}>3</MenuItem>
-                                <MenuItem value={4}>4</MenuItem>
-                                <MenuItem value={5}>5</MenuItem>
-                              </Select>
-                            </FormControl>
-                          </Box>
+                                {item.title}
+                              </Typography>
+                            </Box>
+                          </Grid>
+                          <Grid item xs={2} sx={{ margin: "7px" }}>
+                            <Box>
+                              <Typography
+                                variant="body2"
+                                sx={{
+                                  display: "flex",
+                                  justifyContent: "center",
+                                }}
+                              >
+                                ${item.price}
+                              </Typography>
+                            </Box>
+                          </Grid>
+                          <Grid item xs={2} sx={{ margin: "7px" }}>
+                            <Box
+                              sx={{ display: "flex", justifyContent: "center" }}
+                            >
+                              <FormControl
+                                variant="outlined"
+                                sx={{ paddingBottom: "2px" }}
+                              >
+                                <Select
+                                  labelId="demo-simple-select-label"
+                                  id="demo-simple-select"
+                                  placeholder="Amount"
+                                  value={amount}
+                                  onChange={handleChange}
+                                  size="small"
+                                  sx={{ width: "80px" }}
+                                >
+                                  <MenuItem value={1}>1</MenuItem>
+                                  <MenuItem value={2}>2</MenuItem>
+                                  <MenuItem value={3}>3</MenuItem>
+                                  <MenuItem value={4}>4</MenuItem>
+                                  <MenuItem value={5}>5</MenuItem>
+                                </Select>
+                              </FormControl>
+                            </Box>
+                          </Grid>
+                          <Grid item xs={2} sx={{ margin: "7px" }}>
+                            <Box
+                              sx={{ display: "flex", justifyContent: "center" }}
+                            >
+                              <IconButton>
+                                <DeleteIcon />
+                              </IconButton>
+                            </Box>
+                          </Grid>
                         </Grid>
-                        <Grid item xs={2} sx={{ margin: "7px" }}>
-                          <Box
-                            sx={{ display: "flex", justifyContent: "center" }}
-                          >
-                            <IconButton>
-                              <DeleteIcon />
-                            </IconButton>
-                          </Box>
-                        </Grid>
-                      </Grid>
-                      <Divider sx={{ marginY: "20px" }} />
-                    </Box>
+                        {/* <Divider
+                          sx={{
+                            marginY: "20px",
+                            width: "50%",
+                            marginLeft: "25%",
+                          }}
+                        /> */}
+                      </Box>
+                    </Paper>
                   ))
                 ) : (
-                  <></>
+                  <Box>
+                    <Typography>empthy</Typography>
+                  </Box>
                 )}
               </Grid>
-              <Grid item xs={4} sx={{ padding: "16px" }}>
-                <Box>
+              <Grid item xs={4} sx={{ padding: "10px" }}>
+                <Box position={"fixed"}>
                   <Paper
                     sx={{ width: "350px", height: "150px", padding: "20px" }}
                     variant="outlined"
