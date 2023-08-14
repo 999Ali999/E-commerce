@@ -13,7 +13,9 @@ import {
   Typography,
 } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const CartDrawer = ({ open, onClose }) => {
   const [cartItems, setCartItems] = React.useState([]);
@@ -37,12 +39,19 @@ const CartDrawer = ({ open, onClose }) => {
             <Grid container alignItems={"flex-start"}>
               <Grid item xs={8}>
                 <Box sx={{ paddingY: "16px" }}>
-                  <Typography variant="h4">Shopping Cart</Typography>
+                  <Link to="/">
+                    <Button variant="outlined">
+                      <ArrowBackIcon />
+                    </Button>
+                  </Link>
+                  <Typography sx={{ paddingY: "10px" }} variant="h4">
+                    Shopping Cart
+                  </Typography>
                 </Box>
                 {/* Im back mafucka */}
                 {cartItems ? (
                   cartItems.map((item) => (
-                    <Box>
+                    <Box key={item.id}>
                       <Grid container spacing={1} paddingX="16px">
                         <Grid item xs={2}>
                           <Box
