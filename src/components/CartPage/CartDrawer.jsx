@@ -62,7 +62,7 @@ const CartDrawer = ({ open, onClose }) => {
                 {/* Im back mafucka */}
                 {cartItems ? (
                   cartItems.map((item) => (
-                    <Paper variant="outlined" sx={{ marginY: "10px" }}>
+                    <Paper variant="outlined" sx={{ marginY: "10px" }} square>
                       <Box key={item.id}>
                         <Grid container spacing={1} marginY="10px">
                           <Grid item xs={2}>
