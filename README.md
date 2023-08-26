@@ -1,5 +1,10 @@
 ### Will create an E-commerce website
 
+![Imgur](./images/Screenshot%202023-08-26%20at%2010.21.09%20AM.png)
+![Imgur](./images/Screenshot%202023-08-26%20at%2010.21.21%20AM.png)
+![Imgur](./images/Screenshot%202023-08-26%20at%2010.22.48%20AM.png)
+![Imgur](./images/Screenshot%202023-08-26%20at%2010.23.26%20AM.png)
+
 #### Live at: https://happy-commerce-alpha.vercel.app/
 
 #### Tech stack: React.js / MUI / Firebase
