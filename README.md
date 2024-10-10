@@ -1,14 +1,49 @@
-#### Live at: https://happy-commerce-alpha.vercel.app/
+# 🛒 Happy Commerce
 
-![Imgur](./images/Screenshot%202023-08-26%20at%2010.21.09%20AM.png)
-![Imgur](./images/Screenshot%202023-08-26%20at%2010.21.21%20AM.png)
-![Imgur](./images/Screenshot%202023-08-26%20at%2010.22.48%20AM.png)
-![Imgur](./images/Screenshot%202023-08-26%20at%2010.23.26%20AM.png)
+[Live Demo](https://happy-commerce-alpha.vercel.app/)
 
-#### Tech stack: React.js / MUI / RESTful API's
+## 🛠️ Tech & Tools
 
-### Website uses the RESTful api from https://fakestoreapi.com/ to fetch products.
+- **React.js**: Dynamic frontend library for building the user interface.
+- **Material-UI (MUI)**: Used for sleek and modern UI components.
+- **RESTful APIs**: Product data is fetched from [FakeStoreAPI](https://fakestoreapi.com/).
+- **Local Storage**: Used to persist cart items across sessions.
+- **Vercel**: For fast and reliable hosting of the website.
 
-### You can add you're chosen product to be added to you're Cart, what it does is to add the product to you're browser local storage and then fetch them using the useEffect hook.
+## 🚀 Overview
 
-### Website still missing tones of functionalities, such as the payment method that could be added to website like paypal or strip & **website responsiveness** to different devices like mobiles & Login Sign up and more.
+Happy Commerce Alpha is an eCommerce platform prototype designed to showcase product listings and a functional cart system. The app fetches product data from a public API and allows users to add items to their cart. The cart persists using **local storage**, ensuring the items remain saved between page reloads.
+
+## 🎯 Features
+
+- **Product Listing**: Fetches and displays products from [FakeStoreAPI](https://fakestoreapi.com/).
+- **Add to Cart**: Seamless addition of products to the shopping cart, with data stored in the browser's local storage.
+- **Persistent Cart**: Even after refreshing the page, your cart remains intact using the `useEffect` hook to retrieve items from local storage.
+- **Deployed with Vercel**: Easy and fast deployment, live on [Vercel](https://happy-commerce-alpha.vercel.app/).
+
+## 📝 Upcoming Features
+
+🔧 While Happy Commerce Alpha is functional, there are several planned features to enhance the user experience:
+
+1. **Responsive Design**: Improving the layout and styling to be mobile-friendly and responsive for all screen sizes.
+3. **User Authentication**: Add **Login/Signup** functionality to personalize the shopping experience.
+4. **Order Management**: Keep track of user orders, purchase history, and more.
+5. **Improved Cart Functionality**: Add options for quantity adjustment, product removal, and more.
+
+## 📦 Installation & Setup
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/your-username/happy-commerce-alpha.git
+
+1. Install dependencies:
+
+   ```bash
+   npm install
+
+1. Start the development server:
+
+   ```bash
+   npm start
+
