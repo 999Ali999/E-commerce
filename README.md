@@ -12,7 +12,7 @@
 
 ## 🚀 Overview
 
-Happy Commerce Alpha is an eCommerce platform prototype designed to showcase product listings and a functional cart system. The app fetches product data from a public API and allows users to add items to their cart. The cart persists using **local storage**, ensuring the items remain saved between page reloads.
+Happy Commerce is an eCommerce platform prototype designed to showcase product listings and a functional cart system. The app fetches product data from a public API and allows users to add items to their cart. The cart persists using **local storage**, ensuring the items remain saved between page reloads.
 
 ## 🎯 Features
 
