@@ -1,5 +1,3 @@
-### Will create an E-commerce website
-
 #### Live at: https://happy-commerce-alpha.vercel.app/
 
 ![Imgur](./images/Screenshot%202023-08-26%20at%2010.21.09%20AM.png)
