@@ -7,7 +7,7 @@
 
 #### Tech stack: React.js / MUI / RESTful API's
 
-### Website uses the ready fake api from https://fakestoreapi.com/ to fetch products.
+### Website uses the RESTful api from https://fakestoreapi.com/ to fetch products.
 
 ### You can add you're chosen product to be added to you're Cart, what it does is to add the product to you're browser local storage and then fetch them using the useEffect hook.
 
