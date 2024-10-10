@@ -23,7 +23,7 @@ Happy Commerce is an eCommerce platform prototype designed to showcase product l
 
 ## 📝 Upcoming Features
 
-🔧 While Happy Commerce Alpha is functional, there are several planned features to enhance the user experience:
+🔧 While Happy Commerce is functional, there are several planned features to enhance the user experience:
 
 1. **Responsive Design**: Improving the layout and styling to be mobile-friendly and responsive for all screen sizes.
 3. **User Authentication**: Add **Login/Signup** functionality to personalize the shopping experience.
