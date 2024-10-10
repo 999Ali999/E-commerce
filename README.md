@@ -7,7 +7,7 @@
 ![Imgur](./images/Screenshot%202023-08-26%20at%2010.22.48%20AM.png)
 ![Imgur](./images/Screenshot%202023-08-26%20at%2010.23.26%20AM.png)
 
-#### Tech stack: React.js / MUI / Firebase
+#### Tech stack: React.js / MUI / RESTful API's
 
 ### Website uses the ready fake api from https://fakestoreapi.com/ to fetch products.
 
